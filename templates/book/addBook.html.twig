@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row row-cols-2">
+            <div class="col-md-4">
+               {# {{form(form)}}#}
+               {{ form_start(form, {'attr': { 'novalidate': 'novalidate'}}) }}
+               <table>
+               <tr>
+               <td>
+                    {{ form_label(form.title, "title") }}
+               </td>
+               <td>
+                    {{ form_widget(form.title) }}
+               </td>
+               <td>
+                    {{ form_errors(form.title) }}
+               </td>
+               </tr>
+               <tr>
+               <td>
+                    {{ form_label(form.publicationdate, "publicationdate") }}
+               </td>
+               <td>
+                    {{ form_widget(form.publicationdate) }}
+               </td>
+               <td>
+                    {{ form_errors(form.publicationdate) }}
+               </td>
+               </tr>
+               </tr>
+               <tr>
+               <td>
+                    {{ form_label(form.enabled, "enabled") }}
+               </td>
+               <td>
+                    {{ form_widget(form.enabled) }}
+               </td>
+               <td>
+                    {{ form_errors(form.enabled) }}
+               </td>
+               </tr>
+               
+               <tr>
+               <td>
+                    {{ form_label(form.author, "author") }}
+               </td>
+               <td>
+                    {{ form_widget(form.author) }}
+               </td>
+               <td>
+                    {{ form_errors(form.author) }}
+               </td>
+               </tr>
+               </table>
+               {{ form_widget(form.save) }}
+               {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock  %}

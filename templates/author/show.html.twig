@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<table border="1"> 
+{% for author in Authors %}
+    {% if author.id==id %}
+        {{ author.id }}
+        <img src="{{asset(author.picture)}}" alt"Taha_Hussein" width='100px' height='100px' />
+        {{ author.username | upper }}
+        {{ author.email }}
+        {{ author.nb_books }}
+    {% endif %}
+{% endfor %}
+</table>
+{% endblock  %}
